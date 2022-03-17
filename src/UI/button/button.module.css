@@ -1,0 +1,15 @@
+.button{
+    background: maroon;
+    color: white;
+    padding: 4px 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.button:hover{
+    background: #4d0101;
+}
