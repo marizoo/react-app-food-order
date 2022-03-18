@@ -1,12 +1,18 @@
 .card{
     min-width: 280px;
-    max-width: 860px;
-    min-height: 280px;
+    width: 100%;
+    max-width: 800px;
     background: #f8f8f8;
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
+    /* align-items: center; */
+    padding: 1rem;
 }
+
+@media (min-width: 576px) {
+    .card{
+        /* align-items: flex-start; */
+    }
+ }
 

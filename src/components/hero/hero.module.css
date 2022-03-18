@@ -1,12 +1,18 @@
 .hero{
     width: 100vw;
     max-width: 1200px;
-    height: 30vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 8rem;
 }
 
+@media (min-width: 576px) { 
+    .hero {
+    margin-top: 4rem;
+    }
+}
 
 
 .heroContainer{

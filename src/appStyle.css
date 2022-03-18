@@ -88,7 +88,6 @@ button{
 .app{
     min-height: 100vh;
     background: #1d1d1d;
-    background: lightseagreen;
     color: #f8f8f8;
     display: flex;
     flex-direction: column;
@@ -96,22 +95,13 @@ button{
 }
 
 .app-container{
-    /* width: 80%; */
-    /* max-width: 1200px; */
-    min-height: 100vh;
-    height: 500px;
-    margin-top: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1200px;
 }
 
-/* Media Queries */
-    @media (min-width: 576px) {
-      .app-container{
-        margin-top: 4rem;
-     }
-    }
+
 
 
 

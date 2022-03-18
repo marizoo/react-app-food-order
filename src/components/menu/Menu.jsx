@@ -8,7 +8,7 @@ const Menu = () => {
         <div className={cm.menu}>
             <Card>
                 <div className={cm.menuContainer}>
-                    {/* menu container 1 */}
+                    {/* menu card 1 */}
                     <div className={cm.menuCard}>
                         <div className={cm.menuItems}>
                             <h3 className={cm.menuItemTitle}>Sushi</h3>
@@ -36,7 +36,7 @@ const Menu = () => {
                         </div>
                         <div className={cm.menuLine}></div>
                     </div>
-                    {/* menu container 2 */}
+                    {/* menu card 2 */}
                     <div className={cm.menuCard}>
                         <div className={cm.menuItems}>
                             <h3 className={cm.menuItemTitle}>Sushi</h3>
@@ -64,7 +64,7 @@ const Menu = () => {
                         </div>
                         <div className={cm.menuLine}></div>
                     </div>
-                    {/* menu container 3 */}
+                    {/* menu card 3 */}
                     <div className={cm.menuCard}>
                         <div className={cm.menuItems}>
                             <h3 className={cm.menuItemTitle}>Sushi</h3>
