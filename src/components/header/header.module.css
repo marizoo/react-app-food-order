@@ -22,37 +22,7 @@
     .headerLogoText{
         margin-bottom: .5rem;
     }
-    .headerCartContainer{
-        display: flex;
-        width: 200px;
-        height: 2.3rem;
-        justify-content: center;
-        align-items: center;
-        background: rgb(88, 0, 0);
-        border-radius: 30px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-    .headerCartContainer:hover{
-        background: rgb(49, 0, 0);
-    }
-
-    .headerCartIcon{
-        margin-right: .5rem;
-    }
-    .headerCartText{}
-
-    .headerCartQuantity{
-        margin-left: .5rem;
-        background: maroon;
-        width:2rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 600;
-        border-radius: 30px;
-    }
-
+    
     /* Media Queries */
     @media (min-width: 576px) { 
 

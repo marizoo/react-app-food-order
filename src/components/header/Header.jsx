@@ -1,6 +1,6 @@
 import React from "react";
 import cm from "./header.module.css";
-import { CgShoppingCart } from "react-icons/cg";
+import Cart from "../cart/Cart";
 
 const Header = ({ onHandleOpenModal }) => {
     return (
@@ -9,14 +9,7 @@ const Header = ({ onHandleOpenModal }) => {
                 <div className={cm.headerLogo}>
                     <h2 className={cm.headerLogoText}>Mealz</h2>
                 </div>
-                <div
-                    className={cm.headerCartContainer}
-                    onClick={onHandleOpenModal}
-                >
-                    <CgShoppingCart className={cm.headerCartIcon} />
-                    <p className={cm.headerCartText}>Your Cart</p>
-                    <div className={cm.headerCartQuantity}>0</div>
-                </div>
+                <Cart onHandleOpenModal={onHandleOpenModal} />
             </div>
         </div>
     );
