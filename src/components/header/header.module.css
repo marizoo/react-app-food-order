@@ -30,8 +30,13 @@
         align-items: center;
         background: rgb(88, 0, 0);
         border-radius: 30px;
-
+        cursor: pointer;
+        transition: 0.3s;
     }
+    .headerCartContainer:hover{
+        background: rgb(49, 0, 0);
+    }
+
     .headerCartIcon{
         margin-right: .5rem;
     }
