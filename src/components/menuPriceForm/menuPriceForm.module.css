@@ -40,7 +40,5 @@
     grid-area: price;
     }
 
-    .menuLine{
-        grid-area: line;
-    }
+   
  }
