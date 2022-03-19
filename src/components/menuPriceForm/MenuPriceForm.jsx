@@ -1,15 +1,37 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Button from "../../UI/button/Button";
 import Input from "../../UI/input/Input";
 import cm from "./menuPriceForm.module.css";
 
-const MenuPriceForm = ({ onHandlePriceForm, id }) => {
+const MenuPriceForm = ({ onAddToCart, id }) => {
+    const [amountIsValid, setAmountIsValid] = useState(true);
+
+    const amountInputRef = useRef();
+
+    const submitHandler = (ev) => {
+        ev.preventDefault();
+
+        const enteredAmount = amountInputRef.current.value;
+        // for the above, the input will always be in "string", so we need to force convert into a value by adding a "+"
+        const enteredAmountNumber = +enteredAmount;
+
+        if (
+            enteredAmount.trim().length === 0 ||
+            enteredAmount < 1 ||
+            enteredAmount > 5
+        ) {
+            setAmountIsValid(false);
+            return;
+        }
+
+        onAddToCart(enteredAmountNumber);
+    };
+
     return (
-        <form onSubmit={onHandlePriceForm} className={cm.menuPrice}>
+        <form onSubmit={submitHandler} className={cm.menuPrice}>
             <div className={cm.menuPriceTop}>
-                {/* <h3 className={cm.menuPriceTopText}>Amount</h3> */}
-                {/* make into a component */}
                 <Input
+                    ref={amountInputRef}
                     label="Amount"
                     input={{
                         id: "amount_" + id,
@@ -26,6 +48,7 @@ const MenuPriceForm = ({ onHandlePriceForm, id }) => {
                 <Button type="submit" className={cm.menuPriceBottomAddBtn}>
                     +Add
                 </Button>
+                {!amountIsValid && <p>Please enter a valid amount (1-5).</p>}
             </div>
         </form>
     );

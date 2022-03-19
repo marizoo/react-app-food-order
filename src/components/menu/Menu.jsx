@@ -9,7 +9,7 @@ const Menu = ({ datas }) => {
             <Card>
                 <div className={cm.menuContainer}>
                     {datas.map((data) => (
-                        <MenuCard key={data.id} data={data} />
+                        <MenuCard key={data.id} id={data.id} data={data} />
                     ))}
                 </div>
             </Card>

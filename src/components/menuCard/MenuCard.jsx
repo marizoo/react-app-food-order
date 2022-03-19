@@ -1,12 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import MenuPriceForm from "../menuPriceForm/MenuPriceForm";
 import cm from "./menuCard.module.css";
+import CartContext from "../../store/cart-context";
 
 const MenuCard = ({ data }) => {
+    const cartCtx = useContext(CartContext);
+
     const price = `${data.price.toFixed(2)}`;
 
-    const handlePriceForm = (ev) => {
-        ev.preventDefault();
+    const addToCartHandler = (amount) => {
+        cartCtx.addItem({
+            id: data.id,
+            name: data.name,
+            amount: amount,
+            price: data.price,
+        });
     };
 
     return (
@@ -17,7 +25,7 @@ const MenuCard = ({ data }) => {
                 <h3 className={cm.menuItemPrice}>${price}</h3>
             </div>
 
-            <MenuPriceForm onHandlePriceForm={handlePriceForm} id={data.id} />
+            <MenuPriceForm onAddToCart={addToCartHandler} id={data.id} />
 
             <div className={cm.menuLine}></div>
         </div>
