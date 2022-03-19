@@ -25,37 +25,6 @@
     color: maroon;
 }
 
-/* menuPrice */
-.menuPrice{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-/* menuPriceTop */
-.menuPriceTop{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.menuPriceTopText{
-    font-weight: 500;
-}
-
-.menuPriceTopInput{
-    width: 50px;
-    margin-left: 1rem;
-    padding-left: 5px;
-}
-
-/* menuPriceBottom */
-.menuPriceBottom{
-    margin-top: .5rem;
-}
-.menuPriceBottomAddBtn{
-    width: 4rem;
-}
-
 /* menuLine */
 .menuLine{
     background:rgba(0, 0, 0, 0.15);
@@ -80,11 +49,12 @@
         margin-bottom: 0;
     }
 
-    .menuPrice{
-    grid-area: price;
+    .menuLine{
+        width: 100%;
+       
+            grid-area: line;
+        
     }
 
-    .menuLine{
-        grid-area: line;
-    }
+   
  }

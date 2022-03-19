@@ -1,10 +1,9 @@
 import React from "react";
-import Button from "../../UI/button/Button";
-// import Input from "../../UI/input/Input";
+import MenuPriceForm from "../menuPriceForm/MenuPriceForm";
 import cm from "./menuCard.module.css";
 
 const MenuCard = ({ data }) => {
-    const price = `$${data.price.toFixed(2)}`;
+    const price = `${data.price.toFixed(2)}`;
 
     const handlePriceForm = (ev) => {
         ev.preventDefault();
@@ -18,23 +17,7 @@ const MenuCard = ({ data }) => {
                 <h3 className={cm.menuItemPrice}>${price}</h3>
             </div>
 
-            <form onSubmit={handlePriceForm} className={cm.menuPrice}>
-                <div className={cm.menuPriceTop}>
-                    <h3 className={cm.menuPriceTopText}>Amount</h3>
-                    <input
-                        className={cm.menuPriceTopInput}
-                        type="number"
-                        placeholder="1"
-                    />
-                    {/* <Input className={cm.menuPriceTopInput} /> */}
-                </div>
-
-                <div className={cm.menuPriceBottom}>
-                    <Button type="submit" className={cm.menuPriceBottomAddBtn}>
-                        +Add
-                    </Button>
-                </div>
-            </form>
+            <MenuPriceForm onHandlePriceForm={handlePriceForm} id={data.id} />
 
             <div className={cm.menuLine}></div>
         </div>

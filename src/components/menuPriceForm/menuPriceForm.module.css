@@ -1,0 +1,46 @@
+
+/* menuPrice */
+.menuPrice{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+/* menuPriceTop */
+.menuPriceTop{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .menuPriceTopText{
+    font-weight: 500;
+} */
+
+/* input price */
+/* .menuPriceTopInput{
+    width: 50px;
+    margin-left: 1rem;
+    padding-left: 5px;
+} */
+
+
+/* menuPriceBottom */
+.menuPriceBottom{
+    margin-top: .5rem;
+}
+.menuPriceBottomAddBtn{
+    width: 4rem;
+}
+
+
+
+@media (min-width: 576px) { 
+  
+    .menuPrice{
+    grid-area: price;
+    }
+
+    .menuLine{
+        grid-area: line;
+    }
+ }
