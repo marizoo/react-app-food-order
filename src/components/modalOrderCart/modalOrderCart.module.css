@@ -16,6 +16,7 @@
     justify-content: center;
     align-items: center;
 }
+
 @media (min-width: 370px) {
     .orderModalCard {
         left: 10%;

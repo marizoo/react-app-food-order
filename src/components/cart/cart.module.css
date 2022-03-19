@@ -9,6 +9,7 @@
         border-radius: 30px;
         cursor: pointer;
         transition: 0.3s;
+        color: white;
     }
     .headerCartContainer:hover{
         background: rgb(49, 0, 0);

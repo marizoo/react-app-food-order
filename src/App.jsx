@@ -4,6 +4,7 @@ import "./appStyle.css";
 import Hero from "./components/hero/Hero";
 import Menu from "./components/menu/Menu";
 import ModalOrder from "./components/modal-order/ModalOrder";
+import CartProvider from "./store/CartProvider";
 
 const DUMMY_MEALS = [
     {
@@ -40,27 +41,28 @@ const App = () => {
     // const mealsList = DUMMY_MEALS.map(meal => <li>{meal.name}</li>)
     const [datas, setDatas] = useState(DUMMY_MEALS);
 
-    // 01. a2/3. State to show/close modal
+    // 01. a2/3. State to close modal
     const handleCloseModal = () => {
         setShowModalOrder(null);
     };
-
     // 01. a3/3. State to show/close modal
     const handleOpenModal = () => {
         setShowModalOrder(true);
     };
 
     return (
-        <div className="app">
-            <div className="app-container">
-                {showModalOrder && (
-                    <ModalOrder onHandleCloseModal={handleCloseModal} />
-                )}
-                <Header onHandleOpenModal={handleOpenModal} />
-                <Hero />
-                <Menu datas={datas} />
+        <CartProvider>
+            <div className="app">
+                <div className="app-container">
+                    {showModalOrder && (
+                        <ModalOrder onHandleCloseModal={handleCloseModal} />
+                    )}
+                    <Header onHandleOpenModal={handleOpenModal} />
+                    <Hero />
+                    <Menu datas={datas} />
+                </div>
             </div>
-        </div>
+        </CartProvider>
     );
 };
 

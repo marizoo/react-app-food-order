@@ -12,18 +12,21 @@ const Backdrop = (props) => {
     );
 };
 
+const rootBackdrop = document.getElementById("root-backdrop");
+const rootOverlay = document.getElementById("root-overlay");
+
 const ModalOrder = (props) => {
     return (
         <div className={cm.ModalOrder}>
             {ReactDOM.createPortal(
                 <Backdrop onHandleCloseModal={props.onHandleCloseModal} />,
-                document.getElementById("root-backdrop")
+                rootBackdrop
             )}
             {ReactDOM.createPortal(
                 <ModalOrderCart
                     onHandleCloseModal={props.onHandleCloseModal}
                 />,
-                document.getElementById("root-overlay")
+                rootOverlay
             )}
         </div>
     );
