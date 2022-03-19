@@ -5,9 +5,10 @@
     width: 100%;
     z-index: 15;
     position: fixed;
-    top: 30vh;
+    top: 20vh;
     left: 6%;
     width: 80%;
+    max-height: 60%;
     overflow: hidden;
     background: transparent;
     background: white;
@@ -15,6 +16,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: scroll;
 }
 
 @media (min-width: 370px) {
@@ -43,6 +45,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1rem;
 }
 
 

@@ -1,22 +1,39 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "../../UI/button/Button";
 import Card from "../../UI/card/Card";
 import cm from "./modalOrderCart.module.css";
+import CartContext from "../../store/cart-context";
 
-const modalOrderCart = (props) => {
-    const cartItems = [
-        {
-            id: "c1",
-            name: "Sushi",
-            amount: 3,
-            price: 15.99,
-        },
-    ];
+const ModalOrderCart = (props) => {
+    const cartCtx = useContext(CartContext);
+
+    // const price = {props.price.toFixed(2)};
+    const totalAmount = `${cartCtx.totalAmount.toFixed(2)}`;
+    const hasItems = cartCtx.items.length > 0;
+
+    const cartItemRemoveHandler = (id) => {};
+
+    const cartItemAddHandler = (item) => {
+        cartCtx.addItem({ ...item, amount: 1 });
+    };
+
+    // what is this "bind" about?
+    // onRemove={cartItemRemoveHandler.bind(null, item.id)}
+    // onAdd={cartItemAddHandler.bind(null, item)}
+
+    // const cartItems = [
+    //     {
+    //         id: "c1",
+    //         name: "Sushi",
+    //         amount: 3,
+    //         price: 15.99,
+    //     },
+    // ];
 
     return (
         <Card className={cm.orderModalCard}>
             <div className={cm.orderModalContainer}>
-                {cartItems.map((item) => (
+                {cartCtx.items.map((item) => (
                     <div key={item.id} className={cm.orderModalItems}>
                         <div className={cm.orderModalItemsLeft}>
                             <div className={cm.orderModalItemsLeftTop}>
@@ -42,12 +59,18 @@ const modalOrderCart = (props) => {
                             </div>
                         </div>
                         <div className={cm.orderModalItemsRight}>
-                            <div className={cm.orderModalItemsRightButtonMinus}>
+                            <button
+                                onClick={cartItemRemoveHandler}
+                                className={cm.orderModalItemsRightButtonMinus}
+                            >
                                 -
-                            </div>
-                            <div className={cm.orderModalItemsRightButtonPlus}>
+                            </button>
+                            <button
+                                onClick={cartItemAddHandler}
+                                className={cm.orderModalItemsRightButtonPlus}
+                            >
                                 +
-                            </div>
+                            </button>
                         </div>
                     </div>
                 ))}
@@ -55,7 +78,7 @@ const modalOrderCart = (props) => {
                 <div className={cm.orderModalLine}></div>
                 <div className={cm.orderModalTotalContainer}>
                     <h3 className={cm.orderModalTotal}>Total Amount</h3>
-                    <h3 className={cm.orderModalAmount}>$33.00</h3>
+                    <h3 className={cm.orderModalAmount}>${totalAmount}</h3>
                 </div>
                 <div className={cm.orderModalButtonContainer}>
                     <Button
@@ -64,11 +87,15 @@ const modalOrderCart = (props) => {
                     >
                         close
                     </Button>
-                    <Button className={cm.orderModalButtonPay}>Pay Now</Button>
+                    {hasItems && (
+                        <Button className={cm.orderModalButtonPay}>
+                            Order
+                        </Button>
+                    )}
                 </div>
             </div>
         </Card>
     );
 };
 
-export default modalOrderCart;
+export default ModalOrderCart;

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ModalOrderCart from "../modalOrderCart/modalOrderCart";
+import ModalOrderCart from "../modalOrderCart/ModalOrderCart";
 import cm from "./modalOrder.module.css";
 
 const Backdrop = (props) => {
